@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99b4d1">
+
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <!-- Верх: IP + копировать -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvDeviceIp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="IP устройства: Загрузка..."
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:padding="6dp" />
+
+            <Button
+                android:id="@+id/btnCopyIp"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:background="@drawable/button_blue"
+                android:text="Скопировать IP"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Отступ -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <!-- Секция адресной книги: заголовок и spinner с стрелкой -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Контакты"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- Spinner + стрелочка справа -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <Spinner
+                android:id="@+id/spinnerContacts"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/et_white_rounded"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingRight="40dp" />
+
+            <!-- Чёрная стрелка подсказки -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="10dp"
+                android:src="@android:drawable/arrow_down_float"
+                app:tint="#000000"
+                android:contentDescription="dropdown arrow" />
+        </FrameLayout>
+
+        <!-- Отступ -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <!-- Поля: имя и IP -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etRecipientName"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:hint="Произвольное имя"
+                android:background="@drawable/et_white_rounded"
+                android:padding="10dp"
+                android:textColor="#99b4d1" />
+
+            <EditText
+                android:id="@+id/etRecipientIp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:hint="IP (например, 192.168.1.100)"
+                android:background="@drawable/et_white_rounded"
+                android:padding="10dp"
+                android:textColor="#99b4d1" />
+        </LinearLayout>
+
+        <!-- Отступ -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <!-- Порт + кнопка сохранить -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etPort"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:hint="Порт (например, 5084)"
+                android:inputType="number"
+                android:background="@drawable/et_white_rounded"
+                android:padding="10dp"
+                android:text="5084"
+                android:textColor="#99b4d1" />
+
+            <Button
+                android:id="@+id/btnSaveContact"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/button_blue"
+                android:text="Сохранить"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Отступ -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <!-- Кнопки: выбрать файл / отправить / принять -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSelectFile"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:background="@drawable/button_blue"
+                android:text="Выбрать файл"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnSendFile"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/button_blue"
+                android:text="Отправить"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnReceiveFile"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/button_blue"
+                android:text="Принять"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Небольшой отступ -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <!-- График скорости: фон совпадает с экраном, линия настроим в коде -->
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chartSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/chart_background"
+            android:layout_marginTop="8dp"/>
+
+
+        <!-- Нижний отступ -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+    </LinearLayout>
+</ScrollView>
